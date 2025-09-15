@@ -1,25 +1,27 @@
-  //1
   document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("Form");
   const resultLink = document.getElementById("result");
   const resultContainer = document.getElementById("resultContainer");
   const resultContent = document.getElementById("resultContent");
 
-//2
-function birthdayy(birthday,currentyear){
-   return currentyear - birthday ;
-}
-function retirementt(birthday,firstname){
-    const agee = birthdayy(birthday,currentyear)
-     const retirement = 65 - agee
-return `${firstname} retires in ${retirement}`
-}
-console.log( retirementt(2005,"zahra"));
-//3
-const friends = ["neda","nedaa","nedaaa"];
-friends.push("mozhde");
-console.log(friends[0]);
-console.log(friends[friends.length-1]); 
+  // ذخیره اطلاعات در localStorage هنگام ارسال فرم
+ form.addEventListener('submit', function(event) {
+     event.preventDefault();
+                
+   if (validateForm()) {
+// ذخیره اطلاعات در localStorage
+ const formData = {
+   fullName: document.getElementById("FullName").value,
+   age: document.getElementById("Age").value,
+   job: document.getElementById("Job").value,
+   friends: document.getElementById("Friends").value,
+   certificateStatus: document.getElementById("CertificateStatus").value,
+   retirementAge: document.getElementById("RetirementAge").value };
+                    
+ localStorage.setItem("userData", JSON.stringify(formData));
+                    
+ // نمایش نتیجه
+  showResults(formData); } });
 //4
 const person = {
     firstname2: "shayan",
