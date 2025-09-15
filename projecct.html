@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +8,51 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-t from-purple-600 to-pink-500 text-white h-screen flex items-center justify-center">
-    <nav>
-    <a></a>
 
-    </nav>
-<form>
-    <label for="" class=""></label>
-    <input id="" class="">
+ <div class="container">
+    <h1>فرم اطلاعات کاربری</h1>
 
-    <label for="" class=""></label>
-    <input id="" class="">
-    
-    <label for="" class=""></label>
-    <input id="" class="">
+     <form id="Form">
+        <div class="form-group">
+         <span>نام و نام خانوادگی</span> <input type="text" id="FullName" placeholder="نام شما" required>
+         <div class="error" id="FullNameError">لطفاً نام خود را وارد کنید</div>
+        </div>
+            
+        <div class="form-group">
+         <span>سال تولد</span> <input type="number" id="Age" placeholder="مثلا 2003" شما" required>
+         <div class="error" id="AgeError">لطفاً سن خود را وارد کنید</div>
+        </div>
+            
+        <div class="form-group">
+         <span>شغل</span> <input type="text" id="Job" placeholder="مثلاً پزشک" required>
+         <div class="error" id="JobError">لطفاً شغل خود را وارد کنید</div>
+        </div>
+            
+        <div class="form-group">
+         <span> دوستان</span> <input type="text" id="Friends" placeholder="مثلاً ۴" required>
+         <div class="error" id="FriendsError">لطفاً تعداد دوستان خود را وارد کنید</div>
+        </div>
+            
+        <div class="form-group">
+         <span>وضعیت گواهینامه</span> <input type="text" id="CertificateStatus" placeholder="بله یا خیر" required>
+         <div class="error" id="CertificateError">لطفاً وضعیت گواهینامه خود را وارد کنید (بله یا خیر)</div>
+        </div>
+            
+        <div class="form-group">
+         <span>سن بازنشستگی</span> <input type="number" id="RetirementAge" placeholder="مثلاً ۵۰" required>
+         <div class="error" id="RetirementError">لطفاً سن بازنشستگی را وارد کنید</div>
+        </div>
+            
+        <input type="submit" value=" تکمیل پروفایل " class="buttom">
+        <a href="#" id="result">مشاهده نتیجه</a>
 
-
-</form>
-
-
+        </form>
+        
+        <div class="result-container" id="resultContainer">
+            <div class="result-title">خلاصه پروفایل</div>
+            <div class="result-content" id="resultContent"></div>
+        </div>
+    </div>
 
 <script src="projrct.js"></script>
 </body>
