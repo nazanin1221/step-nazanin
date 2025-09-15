@@ -1,9 +1,10 @@
-const firstname = "zahra";
-const birthday = 2005;
-const job = "danceinstructor";
-const currentyear = 2025;
-const age = currentyear - birthday ;
-console.log(age);
+  //1
+  document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("Form");
+  const resultLink = document.getElementById("result");
+  const resultContainer = document.getElementById("resultContainer");
+  const resultContent = document.getElementById("resultContent");
+
 //2
 function birthdayy(birthday,currentyear){
    return currentyear - birthday ;
