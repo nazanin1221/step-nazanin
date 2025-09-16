@@ -1,11 +1,13 @@
+  //1
   document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("Form");
   const resultLink = document.getElementById("result");
   const resultContainer = document.getElementById("resultContainer");
   const resultContent = document.getElementById("resultContent");
 
+  // 2
   // ذخیره اطلاعات در localStorage هنگام ارسال فرم
- form.addEventListener('submit', function(event) {
+ form.addEventListener("submit", function(event) {
      event.preventDefault();
                 
    if (validateForm()) {
@@ -116,8 +118,8 @@ content += `
  `;
                 
 resultContent.innerHTML = content;
- resultContainer.style.display = 'block';
+ resultContainer.style.display = "block";
                 
  // اسکرول به بخش نتایج
- resultContainer.scrollIntoView({ behavior: 'smooth' }); }});
+ resultContainer.scrollIntoView({ behavior: "smooth" }); }});
 
