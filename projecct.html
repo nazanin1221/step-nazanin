@@ -3,55 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم اطلاعات کاربری</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body class="bg-gradient-to-t from-purple-600 to-pink-500 text-white h-screen flex items-center justify-center">
+<body class="bg-gradient-to-t from-purple-600 to-pink-500 text-white min-h-screen flex items-center justify-center p-4 py-10">
+    <div class="container">
+        <h1 >فرم اطلاعات کاربری</h1>
 
- <div class="container">
-    <h1>فرم اطلاعات کاربری</h1>
-
-     <form id="Form">
-        <div class="form-group">
-         <span >نام و نام خانوادگی</span> <input type="text" id="FullName" placeholder="نام شما" class="text-blue-600 dark:text-sky-400" required>
-         <div class="error" id="FullNameError">لطفاً نام خود را وارد کنید</div>
-        </div>
-            
-        <div class="form-group">
-         <span>سال تولد</span> <input type="number" id="Age" placeholder="مثلا 1375" class="text-blue-600 dark:text-sky-400" required>
-         <div class="error" id="AgeError"> ( بین 1300 تا1400 )لطفاً سال تولد معتبر را وارد کنید</div>
-        </div
-            
-        <div class="form-group">
-         <span>شغل</span> <input type="text" id="Job" placeholder="مثلاً پزشک"  class="text-blue-600 dark:text-sky-400" required>
-        <div class="error" id="JobError">لطفاً شغل خود را وارد کنید</div>
-        </div>
-            
-        <div class="form-group">
-         <span> اسامی دوستان</span> <input type="text" id="Friends" placeholder="مثلاً یگانه،مریم،مهسا،ندا "  class="text-blue-600 dark:text-sky-400" required>
-         <div class="instructions">نام دوستان خود را با کاما یا Enter جدا کنید</div>
-         <div class="error" id="FriendsError">لطفاً حداقل نام یک دوست را وارد کنید</div>
-        </div>
-            
-        <div class="form-group">
-         <span>وضعیت گواهینامه</span> <input type="text" id="CertificateStatus" placeholder="بله یا خیر"  class="text-blue-600 dark:text-sky-400" required>
-        <div class="error" id="CertificateError">لطفاً وضعیت مدرک خود را وارد کنید (بله یا خیر)</div>
-        </div>
-            
-        <div class="form-group">
-         <span>سن بازنشستگی</span> <input type="number" id="RetirementAge" placeholder="مثلاً ۵۰"  class="text-blue-600 dark:text-sky-400" required>
-        <div class="error" id="RetirementError">لطفاً سن بازنشستگی را وارد کنید</div>
-        </div>
-            
-        <button type="submit" class="buttom w-full">تکمیل پروفایل</button>
+        <form id="userForm">
+            <div class="form-group">
+                <label class="form-label">نام و نام خانوادگی</label>
+                <input type="text" id="FullName" placeholder="نام و نام خانوادگی شما" required>
+                <div class="error" id="FullNameError">لطفاً نام خود را وارد کنید</div>
+            </div>
+                
+            <div class="form-group">
+                <label class="form-label">سال تولد</label>
+                <input type="number" id="Age" placeholder="مثلا 1375" required min="1300" max="1400">
+                <div class="error" id="AgeError">لطفاً سال تولد معتبر وارد کنید (بین 1300 تا 1400)</div>
+            </div>
+                
+            <div class="form-group">
+                <label class="form-label">شغل</label>
+                <input type="text" id="Job" placeholder="مثلاً پزشک" required>
+                <div class="error" id="JobError">لطفاً شغل خود را وارد کنید</div>
+            </div>
+                
+            <div class="form-group">
+                <label class="form-label">اسامی دوستان (با کاما جدا کنید)</label>
+                <input type="text" id="FriendsList" placeholder="مثلاً: علی، محمد، زهرا" required>
+                <div class="instructions">نام دوستان خود را با کاما یا Enter جدا کنید</div>
+                <div class="error" id="FriendsError">لطفاً حداقل نام یک دوست را وارد کنید</div>
+            </div>
+                
+            <div class="form-group">
+                <label class="form-label">وضعیت گواهینامه</label>
+                <select id="CertificateStatus" required>
+                    <option value="">انتخاب کنید</option>
+                    <option value="بله">بله</option>
+                    <option value="خیر">خیر</option>
+                </select>
+                <div class="error" id="CertificateError">لطفاً وضعیت گواهینامه را انتخاب کنید</div>
+            </div>
+                
+            <div class="form-group">
+                <label class="form-label">سن بازنشستگی</label>
+                <input type="number" id="RetirementAge" placeholder="مثلاً ۶۵" required min="45" max="70">
+                <div class="error" id="RetirementError">لطفاً سن بازنشستگی را بین ۴۵ تا ۷۰ وارد کنید</div>
+            </div>
+                
+            <button type="submit" class="buttom">تکمیل پروفایل</button>
         </form>
         
         <div class="result-container" id="resultContainer">
-            <div class="result-title text-xl font-bold mb-4">خلاصه پروفایل</div>
+            <div class="result-title">خلاصه پروفایل</div>
             <div class="result-content" id="resultContent"></div>
         </div>
     </div>
 
-<script src="projrct.js"></script>
+    <script src="./projrct.js">
+      
+    </script>
 </body>
+</html>
